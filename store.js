@@ -18,5 +18,6 @@ orders.set(4, new Order(4, 'Laptop', 123900)),
 orders.set(5, new Order(5, 'Wardrobe', 12345))
 
 for (let i = 1; i <= orders.size; i++) {
-console.log(`Zamówienie: id: ${orders.get(i).id} produkt: ${orders.get(i).name} cena: ${orders.get(i).price}`);
+console.log(`Zamówienie: id: ${orders.get(i).id} produkt: ${orders.get(i).name} cena: ${orders.get(i).price} zł`);
 }
+
