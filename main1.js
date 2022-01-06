@@ -1,4 +1,4 @@
-async function job() {
+async function fetchApi() {
     const countriesAPI = 'https://restcountries.com/v2/all/';
     await fetch(countriesAPI)
         .then((response) => {
@@ -33,4 +33,4 @@ async function job() {
         });
 }
  
-job();
+fetchApi();

@@ -1,19 +1,22 @@
 class Order {
-    constructor(id, price, name) {
+    constructor(id, name, price) {
         this.id = id;
-        this.price = price;
         this.name = name;
-        return Order;
-    }}
+        this.price = price;
+    }
 
-const Orders = new Map(this.id,this.name, this.price);
+    display() {
+    console.log(`${this.name} `);
+}
+}
 
-Orders.set(1, {name: 'TV', price: 2000});
-Orders.set(2, {name: 'Radio', price: 21000});
-Orders.set(3, {name: 'Bag', price: 213});
-Orders.set(4, {name: 'Computer', price: 324});
-Orders.set(5, {name: "Laptop", price: 5467});
-console.log("Zakupiono:");
-for (let order = 1; order < 6; order++) {
-console.log(`${order} Produkt : ${Orders.get(order).name}, cena:  ${Orders.get(order).price} zł`);
+const orders = new Map();
+orders.set(1, new Order(1, 'TV', 2000002));
+orders.set(2, new Order(2, 'Radio', 213456)),
+orders.set(3, new Order(3, 'Computer', 76823)),
+orders.set(4, new Order(4, 'Laptop', 123900)),
+orders.set(5, new Order(5, 'Wardrobe', 12345))
+
+for (let i = 1; i <= orders.size; i++) {
+console.log(`Zamówienie: id: ${orders.get(i).id} produkt: ${orders.get(i).name} cena: ${orders.get(i).price}`);
 }

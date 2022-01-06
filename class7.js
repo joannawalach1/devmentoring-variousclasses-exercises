@@ -32,7 +32,7 @@ function waterPlant(amountOfWater) {
             console.log(`Zbiornik dostawczy jest pusty ${water_carnister} `);
           
     }
-}return;
+};
 
 waterPlant(1500);
 console.log(newVassels);

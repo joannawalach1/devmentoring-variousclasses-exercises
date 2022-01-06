@@ -6,17 +6,17 @@ class User {
     #createdAt;
     #isLoggedIn;
     constructor(id, username, email, password, createdAt, isLoggedIn) {
-        this.id = id;
+        this.#id = id;
         this.username = username;
         this.email = email;
-        this.password = password;
-        this.createdAt = createdAt;
-        this.isLoggedIn = isLoggedIn;
+        this.#password = password;
+        this.#createdAt = createdAt;
+        this.#isLoggedIn = isLoggedIn;
     }
 
     getId() {
         return this.#id;
-    }
+    };
 
     getPassword() {
         return this.#password;
@@ -42,8 +42,8 @@ class User {
     setIsLoggedIn(isLoggedIn) {
         this.#isLoggedIn = isLoggedIn;
     }
-
 }
+
 
 var users = [
     new User('ab12ex', 'Alex', 'alex@alex.com', '123123'),
@@ -83,39 +83,6 @@ var products = [
     }
 ]
 
-function signIn(email, password) {
-    for (i = 0; i < users.length; i++) {
-        if ((email == users[i].email) && (password == users[i].password)) {
-            console.log("You are logged in");
-            console.log(`You are ${users[i].username}`);
-            console.log(`You are ${users[i].email}`);
-            console.log(`You are ${users[i].password}`);
-            User.isLoggedIn = true;
-            return;
-        }
-    } return console.log("Nie ma takiego użytkownika");
-};
 
 
-function countLikes(id) {
-    for (i = 0; i < products.length; i++) {
-        if (id == products[i].likes) {
-            console.log(` Zamówienie ${products[i].name}, ${products[i].description}, ${products[i].price} zł`);
-        } 
-    } 
-}; 
 
-function ratingProduct(id) {
-    for (let i = 0; i < products.length; i++) {
-        for (let product = 0; product < products[i].ratings.length; product++) {
-            if ((id == products[i].ratings[product].userId)) {
-                console.log(`Nazwa produktu ${products[i].name}`);
-                console.log(`ocena produktu ${products[i].ratings[product].rate}`);
-            } 
-        } 
-    } 
-};
-
-signIn('asab@asab.com', '123456');
-countLikes('fg12cy');
-ratingProduct('fg12cy');
